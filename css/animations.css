@@ -1,0 +1,134 @@
+/* Eye Animations */
+.robot-eye-right {
+    background-color: #286880;
+    transition-delay: 0.5s;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes rotate-eye {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.robot-eye-left {
+    animation: rotate-eye 3s linear infinite;
+    transform-origin: center center;
+}
+
+.robot-eye-right:hover {
+    background-color: black;
+}
+
+/* Ear Animations */
+@keyframes ear-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.robot-ear-left {
+  animation: ear-blink 3s ease-in-out infinite;
+}
+
+.robot-ear-right {
+  animation: ear-blink 5s ease-in-out infinite 1.5s;
+}
+
+/* Hair Animations */
+@keyframes hair-color-change-one {
+  0% { background-color: green; }
+  25% { background-color: yellow; }
+  50% { background-color: orange; }
+  75% { background-color: red; }
+  100% { background-color: green; }
+}
+
+@keyframes hair-color-change-two {
+  0% { background: linear-gradient(to bottom, #ff9966, #ff5e62); }
+  50% { background: linear-gradient(to bottom, #6dd5fa, #2980b9); }
+  100% { background: linear-gradient(to bottom, #ff9966, #ff5e62); }
+}
+
+@keyframes hair-color-change-three {
+  0% { background-color: yellow; }
+  50% { background-color: magenta; }
+  100% { background-color: yellow; }
+}
+
+.robot-hair-one {
+  animation: hair-color-change-one 2s linear infinite;
+}
+
+.robot-hair-two {
+  animation: hair-color-change-two 4s linear infinite;
+}
+
+.robot-hair-three {
+  animation: hair-color-change-three 3s linear infinite;
+}
+
+
+/* Nose Animations */
+@keyframes pulse-nose {
+  0%, 100% { transform: translateX(-60%) scale(1); }
+  50% { transform: translateX(-60%) scale(1.3); }
+}
+
+.robot-nose {
+  animation: pulse-nose 2s ease-in-out infinite;
+}
+
+/* Mustache Animations */
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+.robot-mustache {
+  animation: bob 3s ease-in-out infinite;
+}
+
+/* Teeth Animations */
+@keyframes tooth-wobble-rotated {
+  0%   { transform: rotate(-15deg) translate(0, 0); }
+  25%  { transform: rotate(-15deg) translate(2px, -2px); }
+  50%  { transform: rotate(-15deg) translate(-2px, 2px); }
+  75%  { transform: rotate(-15deg) translate(1px, -1px); }
+  100% { transform: rotate(-15deg) translate(0, 0); }
+}
+
+@keyframes tooth-wobble {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(2px, -2px); }
+  50%  { transform: translate(-2px, 2px); }
+  75%  { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Non-rotated teeth */
+.robot-tooth-top:not(:nth-child(odd)),
+.robot-tooth-bottom:not(:nth-child(even)) {
+  animation: tooth-wobble 2s infinite ease-in-out;
+}
+
+/* Rotated teeth */
+.robot-tooth-top:nth-child(odd),
+.robot-tooth-bottom:nth-child(even) {
+  animation: tooth-wobble-rotated 5s infinite ease-in-out;
+}
+
+/* Tie Animations */
+@keyframes tie-sway {
+  0%   { transform: rotate(-5deg); }
+  50%  { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+.robot-tie-body {
+  animation: tie-sway 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
